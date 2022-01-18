@@ -1,0 +1,83 @@
+<div class="row">
+  <div class="col-xs-12">
+    <img
+      src="{{ recipe.imagePath }}"
+      alt="{{ recipe.name }}"
+      class="img-responsive"
+      style="max-height: 300px"
+    />
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-12">
+    <h1>{{ recipe.name }}</h1>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-12">
+    <!-- <div class="dropdown"> -->
+    <div class="btn-group open">
+      <button
+        class="btn btn-secondary dropdown-toggle"
+        type="button"
+        appDropdown
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+      >
+        <!-- <button
+        class="btn btn-secondary dropdown-toggle"
+        appDropdown
+        type="button"
+      > -->
+        Manage recipe
+        <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+        <li (click)="addToShoppingList()">
+          <a class="dropdown-item" style="cursor: pointer">To shopping list</a>
+        </li>
+        <li>
+          <a
+            class="dropdown-item"
+            style="cursor: pointer"
+            (click)="onEditRecipe()"
+            >Edit recipe</a
+          >
+        </li>
+
+        <!-- alternative to onEditRecipe:
+        routerLink="edit" -->
+
+        <li>
+          <a
+            class="dropdown-item"
+            style="cursor: pointer"
+            (click)="onDeleteRecipe()"
+            >Delete recipe</a
+          >
+        </li>
+      </ul>
+
+      <!-- <ul class="dropdown-menu">
+        <li><a href="#">Action</a></li>
+        <li><a href="#">Another action</a></li>
+        <li><a href="#">Something else here</a></li>
+      </ul> -->
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">{{ recipe.description }}</div>
+</div>
+
+<div class="row">
+  <div class="col-xs-12">
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="let ingredient of recipe.ingredients">
+        <p>{{ ingredient.name }}: {{ ingredient.amount }}</p>
+      </li>
+    </ul>
+  </div>
+</div>

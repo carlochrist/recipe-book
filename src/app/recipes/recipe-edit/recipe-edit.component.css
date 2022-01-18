@@ -1,0 +1,9 @@
+/* .test {
+  display: flex;
+  justify-content: space-around;
+} */
+
+input.ng-invalid.ng-touched,
+textarea.ng-invalid.ng-touched {
+  border: 1px solid red;
+}
