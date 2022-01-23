@@ -19,7 +19,6 @@
           email
         />
       </div>
-
       <div class="form-group">
         <label for="password">Password</label>
         <input
@@ -32,17 +31,17 @@
           minlength="6"
         />
       </div>
-
       <div class="buttons">
         <button
           class="btn btn-primary"
           type="submit"
           [disabled]="!authForm.valid"
         >
-          {{ isLoginMode ? "Login" : "Sign up" }}
+          {{ isLoginMode ? "Login" : "Sign Up" }}
         </button>
-        <button class="btn btn-primary" type="button" (click)="onSwitchMode()">
-          {{ isLoginMode ? "Sign up" : "Swich to Login" }}
+
+        <button class="btn btn-primary" (click)="onSwitchMode()" type="button">
+          Switch to {{ isLoginMode ? "Sign Up" : "Login" }}
         </button>
       </div>
     </form>

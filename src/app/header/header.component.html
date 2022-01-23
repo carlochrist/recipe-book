@@ -41,6 +41,7 @@
           id="logout"
           role="button"
           *ngIf="isAuthenticated"
+          (click)="onLogout()"
         >
           Logout
         </a>
